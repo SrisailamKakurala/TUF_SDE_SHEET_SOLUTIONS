@@ -19,26 +19,26 @@ public:
 
 
 
-// #include<map>
-// class Solution {
-// public:
-//     int maxProfit(vector<int>& prices) {
-//         int n = prices.size();
-//         int maxProfit = INT_MIN, profit = 0;
-//         map<int, int> m;
-//         for(int i=0; i<n; i++) {
-//             m[prices[i]] = i;
-//         }
-//         auto i = m.begin();
-//         auto j = m.end();
-//         while(i!=j) {
-//             if( i->second < j->second ) {
-//                 profit = j->first - i->first;
-//                 maxProfit = max(profit, maxProfit);
-//             }else {
-//                 j--;
-//             }
-//         }
-//         return profit>maxProfit ? profit : maxProfit;
-//     }
-// };
+#include<map>
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int n = prices.size();
+        int maxProfit = INT_MIN, profit = 0;
+        map<int, int> m;
+        for(int i=0; i<n; i++) {
+            m[prices[i]] = i;
+        }
+        auto i = m.begin();
+        auto j = m.end();
+        while(i!=j) {
+            if( i->second < j->second ) {
+                profit = j->first - i->first;
+                maxProfit = max(profit, maxProfit);
+            }else {
+                j--;
+            }
+        }
+        return profit>maxProfit ? profit : maxProfit;
+    }
+};
